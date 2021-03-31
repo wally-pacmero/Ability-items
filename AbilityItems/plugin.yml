@@ -1,0 +1,5 @@
+name: AbilityItems
+main: Items\Main
+version: 1.0.0
+api: [3.0.0, 3.3.3, 4.0.0]
+author: Wallypacmero
