@@ -7,7 +7,9 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 
 use pocketmine\event\player\PlayerInteractEvent;
-
+use pocketmine\utils\TextFormat as TE;
+use pocketmine\item\item;
+use pocketmine\item\ItemIds;
 use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
 
@@ -21,7 +23,6 @@ class Main extends PluginBase implements Listener
     {
 
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getServer()->getLogger()->info("[Unknown] AbilityItems » was loaded successfully!");
 
     }
 
@@ -32,6 +33,8 @@ class Main extends PluginBase implements Listener
         $item = $ev->getItem();
 
         if ($item->getID() == 377) {
+        $item->setCustomName ("§r§l§cStrenghtAbility");
+        $item->setLore(["§7Get Strenght!"]);
 
             if (!isset($this->gcooldown[$player->getName()])) {
 
@@ -52,6 +55,8 @@ class Main extends PluginBase implements Listener
             }
         }
         if($item->getId() == 265){
+        $item->setCustomName ("§r§l§cResistanceAbility");
+        $item->setLore(["§7Get Resistance!"]);
 
             if (!isset($this->gcooldown[$player->getName()])) {
 
@@ -72,6 +77,27 @@ class Main extends PluginBase implements Listener
             }
         }
 
+        if($item->getId() == 399){
+        $item->setCustomName ("§r§l§cInvisibilityAbility");
+        $item->setLore(["§7Get Invisibility!"]);
+
+            if (!isset($this->gcooldown[$player->getName()])) {
+
+                $this->gcooldown[$player->getName()] = time() + 60;
+
+                $player->addEffect((new EffectInstance(Effect::getEffect(Effect::INVISIBILITY)))->setDuration(20 * 5)->setAmplifier(2)->setVisible(true));
+                $player->sendMessage("§aYou got §eInvisibility");
+
+            } else if (time() < $this->gcooldown[$player->getName()]) {
+
+                $reaming = $this->gcooldown[$player->getName()] - time();
+                $player->sendMessage("§aYou have §a§lAbility time, §await" . $reaming);
+
+            } else {
+
+                unset($this->gcooldown[$player->getName()]);
+            }
+        }
     }
 }
 
