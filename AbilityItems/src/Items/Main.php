@@ -10,9 +10,7 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\utils\TextFormat as TE;
 use pocketmine\item\item;
 use pocketmine\item\ItemIds;
-use pocketmine\entity\Effect;
-use pocketmine\entity\EffectInstance;
-
+use pocketmine\entity\{Effect, EffectInstance};
 
 class Main extends PluginBase implements Listener
 {
@@ -98,7 +96,28 @@ class Main extends PluginBase implements Listener
                 unset($this->gcooldown[$player->getName()]);
             }
         }
-    }
+        if($item->getId() == 288){
+        $item->setCustomName ("§r§l§cRegenerationAbility");
+        $item->setLore(["§7Get Regeneration!"]);
+
+            if (!isset($this->gcooldown[$player->getName()])) {
+
+                $this->gcooldown[$player->getName()] = time() + 60;
+
+                $player->addEffect((new EffectInstance(Effect::getEffect(Effect::REGENERATION)))->setDuration(20 * 5)->setAmplifier(2)->setVisible(true));
+                $player->sendMessage("§aYou got §eRegeneration");
+
+            } else if (time() < $this->gcooldown[$player->getName()]) {
+
+                $reaming = $this->gcooldown[$player->getName()] - time();
+                $player->sendMessage("§aYou have §a§lAbility time, §await" . $reaming);
+
+            } else {
+
+                unset($this->gcooldown[$player->getName()]);
+            }
+        }
+    }  
 }
 
 ?>
