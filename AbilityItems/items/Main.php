@@ -1,6 +1,6 @@
 <?php
 
-namespace Items\Main;
+namespace items\Main;
 
 use pocketmine\plugin\PluginBase;
 
