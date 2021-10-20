@@ -12,8 +12,7 @@ use pocketmine\item\item;
 use pocketmine\item\ItemIds;
 use pocketmine\entity\{Effect, EffectInstance};
 
-class Main extends PluginBase implements Listener
-{
+class Main extends PluginBase {
 
     public $gcooldown = [];
 
