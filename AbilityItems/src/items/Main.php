@@ -1,6 +1,6 @@
 <?php
 
-namespace items\Main;
+namespace items;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\plugin\PluginException;
