@@ -13,7 +13,7 @@ use pocketmine\utils\TextFormat as TE;
 use pocketmine\item\item;
 use pocketmine\item\ItemIds;
 use pocketmine\entity\{Effect, EffectInstance};
-use pocketmine\entity\{InvisibilityEffect,VanillaEffects,RegenerationEffect};
+use pocketmine\entity\{InvisibilityEffect, VanillaEffects, RegenerationEffect};
 
 class Main extends PluginBase {
 
