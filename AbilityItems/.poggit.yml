@@ -2,6 +2,7 @@
 build-by-default: true
 branches:
 - Master
+- PM4
 projects:
   AbilityItems:
     path: AbilityItems/
