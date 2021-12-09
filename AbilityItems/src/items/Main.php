@@ -22,7 +22,7 @@ class Main extends PluginBase {
     public function onEnable()
     {
 
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        $this->getPluginManager()->registerEvents($this, $this);
 
     }
 
