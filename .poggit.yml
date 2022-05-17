@@ -1,9 +1,0 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/wally-pacmero/Ability-items
-build-by-default: true
-branches:
-- Master
-- PM4
-projects:
-  AbilityItems:
-    path: AbilityItems/
-...
