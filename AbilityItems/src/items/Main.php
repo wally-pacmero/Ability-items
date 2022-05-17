@@ -54,7 +54,7 @@ class Main extends PluginBase {
 
             }
         }
-        if($item->getCustomName() === "§r§l§cResistanceAbility"){{
+        if($item->getCustomName() === "§r§l§cResistanceAbility"){
         
         $item->setLore(["§7Get Resistance!"]);
 
@@ -120,3 +120,4 @@ class Main extends PluginBase {
             }
         }
     }  
+}
