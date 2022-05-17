@@ -32,8 +32,8 @@ class Main extends PluginBase {
         $player = $ev->getPlayer();
         $item = $ev->getItem();
 
-        if ($item->getID() == 377) {
-        $item->setCustomName ("§r§l§cStrenghtAbility");
+        if($item->getCustomName() === "§r§l§cStrenghtAbility"){ 
+  
         $item->setLore(["§7Get Strenght!"]);
 
             if (!isset($this->gcooldown[$player->getName()])) {
@@ -54,8 +54,8 @@ class Main extends PluginBase {
 
             }
         }
-        if($item->getId() == 265){
-        $item->setCustomName ("§r§l§cResistanceAbility");
+        if($item->getCustomName() === "§r§l§cResistanceAbility"){{
+        
         $item->setLore(["§7Get Resistance!"]);
 
             if (!isset($this->gcooldown[$player->getName()])) {
@@ -77,8 +77,8 @@ class Main extends PluginBase {
             }
         }
 
-        if($item->getId() == 399){
-        $item->setCustomName ("§r§l§cInvisibilityAbility");
+        if($item->getCustomName() === "§r§l§cInvisibilityAbility"){{
+        
         $item->setLore(["§7Get Invisibility!"]);
 
             if (!isset($this->gcooldown[$player->getName()])) {
@@ -98,8 +98,8 @@ class Main extends PluginBase {
                 unset($this->gcooldown[$player->getName()]);
             }
         }
-        if($item->getId() == 288){
-        $item->setCustomName ("§r§l§cRegenerationAbility");
+        if($item->getCustomName() === "§r§l§cRegenerationAbility"){{
+        
         $item->setLore(["§7Get Regeneration!"]);
 
             if (!isset($this->gcooldown[$player->getName()])) {
